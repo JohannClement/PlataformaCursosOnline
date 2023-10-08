@@ -34,6 +34,8 @@ public class BDDEdicao{
 		aluno4 = new Aluno("Ana", "125.456.789-00", "Feminino");
 		aluno5 = new Aluno("Luiz", "126.456.789-00", "Masculino");
     }
+    
+    //Teste
 
     @Test
     public void testEditarTrilhaExistente() {
