@@ -27,28 +27,12 @@ public class Trilha {
         this.nome = nome;
     }
 	
-	public String getDescricao() {
-		return descricao;
-	}
-	
 	public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 	
-	public List<Curso> getListaCurso() {
-		return ListaCurso;
-	}
-	
 	public void adicionaCursoLista(Curso curso) {
         ListaCurso.add(curso);
-    }
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-        this.id = id;
     }
 	
 	public void modificarTrilha(Trilha trilha) {
@@ -56,18 +40,16 @@ public class Trilha {
         this.descricao = trilha.descricao;
         this.ListaCurso = trilha.ListaCurso;
 	}
-	
-	
-	 public void inscreverAluno(Aluno aluno) {
-	        if (!ListaAlunoInscrito.contains(aluno)) {
-	        	ListaAlunoInscrito.add(aluno);
-	            aluno.inscreverNaTrilha(this);
-	        }
-	    }
 
+	public void inscreverAluno(Aluno aluno) {
+		if (!ListaAlunoInscrito.contains(aluno)) {
+			ListaAlunoInscrito.add(aluno);
+			aluno.inscreverNaTrilha(this);
+		}
+	}
 
-	    public List<Aluno> getAlunosInscritos() {
-	        return ListaAlunoInscrito;
-	    }
-	
+	public List<Aluno> getAlunosInscritos() {
+		return ListaAlunoInscrito;
+	}
+
 }

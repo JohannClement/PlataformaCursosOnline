@@ -15,13 +15,6 @@ public class Plataforma {
 		this.ListaTrilha = new ArrayList<Trilha>();
 	}		
 
-	public String getDescricao() {
-		return descricao;
-	}
-	
-	public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
 	
 	public List<Trilha> getListaTrilha() {
         return ListaTrilha;

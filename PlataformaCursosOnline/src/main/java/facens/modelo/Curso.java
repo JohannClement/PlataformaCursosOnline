@@ -17,45 +17,9 @@ public class Curso {
 		this.ListaAluno = new ArrayList<Aluno>();
 		this.id = proximoId++;
 	}
-
-	public String getNome() {
-		return nome ;
-	}
-	
-	public void setNome(String nome) {
-        this.nome = nome;
-    }
-	
-	public String getDescricao() {
-		return descricao;
-	}
-	
-	public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-	
-	public String getMateria() {
-		return materia;
-	}
-	
-	public void setMateria(String materia) {
-        this.materia = materia;
-    }
-	
-	public List<Aluno> getListaAluno() {
-		return ListaAluno;
-	}
 	
 	public void adicionaAlunoLista(Aluno aluno) {
         ListaAluno.add(aluno);
-    }
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-        this.id = id;
     }
 	
 	public void modificarCurso(Curso curso) {
@@ -64,7 +28,4 @@ public class Curso {
         this.materia = curso.materia;
         this.ListaAluno = curso.ListaAluno;
     }
-	
-	
-	
 }
