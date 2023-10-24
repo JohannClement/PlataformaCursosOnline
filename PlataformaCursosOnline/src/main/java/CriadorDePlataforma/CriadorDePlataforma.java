@@ -34,7 +34,7 @@ public class CriadorDePlataforma {
 
 		trilha1.adicionaCursoLista(curso1);
 		trilha1.adicionaCursoLista(curso2);
-		trilha2.adicionaCursoLista(curso3);
+		trilha2.adicionaCursoLista(curso3);		
 
-}
+	}
 }
