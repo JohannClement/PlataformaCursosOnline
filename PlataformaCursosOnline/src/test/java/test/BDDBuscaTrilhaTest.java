@@ -1,4 +1,6 @@
-package test;import static org.junit.Assert.assertEquals;
+package test;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +17,7 @@ public class BDDBuscaTrilhaTest {
     private Aluno aluno1, aluno2, aluno3, aluno4, aluno5;
     private Curso curso1, curso2, curso3;
     private Trilha trilha1, trilha2;
-    private double busca;
+    private boolean busca;
 
     @Before
     public void setUp() {
@@ -52,7 +54,7 @@ public class BDDBuscaTrilhaTest {
         busca = plataforma.buscaTrilhaPorNome("Desenvolvimento de Software");
         
         //ASSERT
-        assertEquals(busca, 1.0, 0.0001);        
+        assertTrue(busca);        
     }    
     
     @Test
@@ -73,6 +75,6 @@ public class BDDBuscaTrilhaTest {
         busca = plataforma.buscaTrilhaPorNome("Desenvolvimento de Soft");
         
         //ASSERT
-        assertEquals(busca, 0.0, 0.0001);        
+        assertFalse(busca);        
     } 
 }

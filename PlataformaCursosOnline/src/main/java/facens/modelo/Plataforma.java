@@ -38,36 +38,19 @@ public class Plataforma {
     }
     
     public void editarTrilhaPorNome(String nomeTrilha, String trilhaNomeEdit, String trilhaDescricaoEdit) {
-    	
-    	for (Trilha trilha : ListaTrilha) {
-    		
-    		if(trilha.getNome().equals(nomeTrilha)) {
-    			
-    			trilha.setNome(trilhaNomeEdit);
-    			System.out.println("Trilha" + nomeTrilha + " editada para " + trilhaNomeEdit + " com sucesso");
-    			
-    			trilha.setDescricao(trilhaDescricaoEdit);
-    			System.out.println("Descrição da" + trilhaNomeEdit + " editada para " + trilhaDescricaoEdit + " com sucesso");
-    			
-    			return;
-    		}
-    	}
-    	System.out.println("Trilha '" + nomeTrilha + "' não encontrada.");
+        ListaTrilha.stream()
+                .filter(trilha -> trilha.getNome().equals(nomeTrilha))
+                .findFirst()
+                .ifPresent(trilha -> {
+                    trilha.setNome(trilhaNomeEdit);
+                    trilha.setDescricao(trilhaDescricaoEdit);
+                    System.out.println("Trilha e descrição editadas com sucesso.");
+                });
     }
     
-    public double buscaTrilhaPorNome(String nomeTrilha) {
-        Iterator<Trilha> iterator = ListaTrilha.iterator();
-        while (iterator.hasNext()) {
-            Trilha trilha = iterator.next();
-            if (trilha.getNome().equals(nomeTrilha)) {
-            	
-                System.out.println("Trilha '" + nomeTrilha + "' FOI encontrada.");
-                return 1.0;
-            }
-            
-        }        
-        System.out.println("Trilha '" + nomeTrilha + "' NAO encontrada.");
-        return 0.0;
+    public boolean buscaTrilhaPorNome(String nomeTrilha) {
+        return ListaTrilha.stream().anyMatch(trilha -> trilha.getNome().equals(nomeTrilha));
     }
+
 }
 
